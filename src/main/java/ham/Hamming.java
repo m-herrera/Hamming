@@ -1,16 +1,16 @@
-package main.hamming;
+package ham;
 
 import java.util.Arrays;
 import java.util.BitSet;
 
 public class Hamming {
     private static String parityType = "even";
-
+    
     private static BitSet parityCheck(BitSet input){
         BitSet output= setParityBits(input);
         return output;
     }
-
+    
     private static BitSet setParityBits (BitSet bitSet){
         BitSet output = new BitSet(4);
         if (!parityType.equals("even")){
@@ -26,18 +26,18 @@ public class Hamming {
         }
         return output;
     }
-
-
+    
+    
     public static void setParityType(String newParityType){
         parityType = newParityType;
     }
-
+    
     public static String[][] Table(BitSet result){
-
+        
         String[][] inputTable = new String[6][11];
         for (int i=0; i<6;i++){
             for (int j=0;j<11;j++) {
-
+                
                 if(Arrays.asList(2,4,5,6,8,9,10).contains(j) && i==0)
                     inputTable[i][j]= (result.get(j)) ? "1" : "0";
                 if(Arrays.asList(0,2,4,6,8,10).contains(j) && i==1)
@@ -49,7 +49,7 @@ public class Hamming {
                 if(Arrays.asList(7,8,9,10).contains(j) && i==4)
                     inputTable[i][j]= (result.get(j)) ? "1" : "0";
                 if (i==5)
-                inputTable[i][j]= (result.get(j)) ? "1" : "0";
+                    inputTable[i][j]= (result.get(j)) ? "1" : "0";
             }
         }
         return inputTable;
@@ -69,7 +69,7 @@ public class Hamming {
         }
         return output;
     }
-
+    
     private static BitSet stringToBitSet(String input){
         int bits = input.length();
         BitSet bitSet = new BitSet(bits);
@@ -84,7 +84,7 @@ public class Hamming {
         return bitSet;
     }
     public static void main(String[] args) {
-
+        
         BitSet correctInput = stringToBitSet("0110101");
         BitSet parity = parityCheck(correctInput);
         BitSet result = join(parity,correctInput);
@@ -97,6 +97,6 @@ public class Hamming {
             }
             System.out.println();
         }
-
+        
     }
 }
