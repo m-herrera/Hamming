@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="view.Controller">
+    <children>
+        <JFXButton buttonType="RAISED" layoutX="271.0" layoutY="240.0" text="Press Me">
+            <ripplerFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="#00ff4f"/>
+                        <Stop color="#002bff" offset="1.0"/>
+                    </stops>
+                </LinearGradient>
+            </ripplerFill>
+        </JFXButton>
+    </children>
+</AnchorPane>
