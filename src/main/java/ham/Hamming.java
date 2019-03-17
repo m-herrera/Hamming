@@ -107,9 +107,9 @@ public class Hamming {
         }
         if (errorPosition == 0)return;
         int count =0;
-        for(int i=0; i<6;i++){
+        for(int i=0; i<=6;i++){
             for (int j = 1; j<=16;j++){
-                if(table[i][j-1]!=null) {
+                if(table[i][j-1]!=null && i != 6) {
                     if ((j&(j-1))==0){
                         String temp = table[i][j-1];
 
@@ -121,6 +121,10 @@ public class Hamming {
                 }
             }
             if (table[i][errorPosition-1] != null) table[i][errorPosition-1]+="$";
+        }
+        for (int i =0; i<17;i++){
+            table[0][i]= table[6][i];
+            table[6][i] = null;
         }
     }
 
@@ -136,5 +140,9 @@ public class Hamming {
         }
         System.out.println();
     }
-    
+
+    public static void main(String[] args) {
+        printTable(getHammingTable("100110100110"));
+        printTable(getHammingError("11010010101001100"));
+    }
 }
