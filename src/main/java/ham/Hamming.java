@@ -141,8 +141,17 @@ public class Hamming {
         System.out.println();
     }
 
+    public static String getHamming17Bit(String[][] table){
+        String output = "";
+        for (String s: table[6]){
+            output+= s;
+        }
+        return output;
+    }
+
     public static void main(String[] args) {
         printTable(getHammingTable("100110100110"));
+        System.out.println(getHamming17Bit(getHammingTable("100110100110")));
         printTable(getHammingError("11010010101001100"));
         setParityType("odd");
     }
