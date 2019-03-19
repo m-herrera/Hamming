@@ -3,6 +3,11 @@ package ham;
 import java.util.Scanner;
 
 public class BinaryToHexDecBCD {
+    String binary = "";
+    
+    public BinaryToHexDecBCD (String b) {
+        binary = b;
+    }
     
     public static void main(String[] args) {
         
@@ -35,7 +40,7 @@ public class BinaryToHexDecBCD {
         return Integer.toHexString(number);
     }
     
-    private static int recursiveBin(String binaryNumber) {
+    public static int recursiveBin (String binaryNumber) {
         int decimal = 0;
         int length = binaryNumber.length();
         if (length > 0) {
@@ -46,7 +51,7 @@ public class BinaryToHexDecBCD {
         return decimal;
     }
     
-    private static String recursiveDecHex(int number) {
+    public static String recursiveDecHex (int number) {
         StringBuilder builder = new StringBuilder();
         if (number > 0) {
             String hexNumber = recursiveDecHex(number / 16);
@@ -57,7 +62,7 @@ public class BinaryToHexDecBCD {
         return builder.toString();
     }
     
-    private static String toBCD (int number) {
+    public static String toBCD (int number) {
         String BCD="";
         while(number!=0)
         {

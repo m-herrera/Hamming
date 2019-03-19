@@ -6,15 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.BitSet;
-
 public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("mainView.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("BINARY -> BCD & HAMMING");
+        primaryStage.setScene(new Scene(root, 1000, 700));
         primaryStage.show();
     }
     
