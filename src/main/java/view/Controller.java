@@ -4,7 +4,6 @@ import com.google.common.base.Splitter;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
-import com.sun.org.apache.xpath.internal.operations.String;
 import ham.BinaryToHexDecBCD;
 import ham.Hamming;
 import javafx.beans.property.SimpleStringProperty;
@@ -75,8 +74,6 @@ public class Controller {
     private TableView<String[]> tableView2;
     
     
-    private Boolean paridad = true;
-    
     @FXML
     void checkInput () {
         if (inputTextField.getText().matches("[0-1]{12}")) {
@@ -113,7 +110,11 @@ public class Controller {
         DEC2LABEL.setText(dec2.toString());
         DEC3LABEL.setText(dec3.toString());
     
+        tableView1.getItems().clear();
         HammingTable1();
+    
+        changeInput.setText(inputTextField.getText());
+        table2Btn.setDisable(false);
     }
     
     @FXML
@@ -243,8 +244,136 @@ public class Controller {
     void HamminTable2 () {
         
         String[][] inputTable2 = Hamming.getHammingError(changeInput.getText());
-        
-        
+    
+        TableColumn<String[], String> p1C = new TableColumn();
+        p1C.setText("p1");
+        TableColumn<String[], String> p2C = new TableColumn();
+        p2C.setText("p2");
+        TableColumn<String[], String> d1C = new TableColumn();
+        d1C.setText("d1");
+        TableColumn<String[], String> p3C = new TableColumn();
+        p3C.setText("p3");
+        TableColumn<String[], String> d2C = new TableColumn();
+        d2C.setText("d2");
+        TableColumn<String[], String> d3C = new TableColumn();
+        d3C.setText("d3");
+        TableColumn<String[], String> d4C = new TableColumn();
+        d4C.setText("d4");
+        TableColumn<String[], String> p4C = new TableColumn();
+        p4C.setText("p4");
+        TableColumn<String[], String> d5C = new TableColumn();
+        d5C.setText("d5");
+        TableColumn<String[], String> d6C = new TableColumn();
+        d6C.setText("d6");
+        TableColumn<String[], String> d7C = new TableColumn();
+        d7C.setText("d7");
+        TableColumn<String[], String> d8C = new TableColumn();
+        d8C.setText("d8");
+        TableColumn<String[], String> d9C = new TableColumn();
+        d9C.setText("d9");
+        TableColumn<String[], String> d10C = new TableColumn();
+        d10C.setText("d10");
+        TableColumn<String[], String> d11C = new TableColumn();
+        d11C.setText("d11");
+        TableColumn<String[], String> p5C = new TableColumn();
+        p5C.setText("p5");
+        TableColumn<String[], String> d12C = new TableColumn();
+        d12C.setText("d12");
+        TableColumn<String[], String> prubC = new TableColumn();
+        prubC.setText("Prueba de Paridad");
+        TableColumn<String[], String> bitC = new TableColumn();
+        bitC.setText("Bit de Paridad");
+    
+        tableView2.getColumns().addAll(p1C, p2C, d1C, p3C, d2C, d3C, d4C, p4C, d5C, d6C, d7C, d8C, d9C, d10C, d11C, p5C, d12C, prubC, bitC);
+    
+        p1C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 0 ? x[0] : "");
+        });
+        p2C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 1 ? x[1] : "");
+        });
+        d1C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 2 ? x[2] : "");
+        });
+        p3C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 3 ? x[3] : "");
+        });
+        d2C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 4 ? x[4] : "");
+        });
+        d3C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 5 ? x[5] : "");
+        });
+        d4C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 6 ? x[6] : "");
+        });
+        p4C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 7 ? x[7] : "");
+        });
+        d5C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 8 ? x[8] : "");
+        });
+        d6C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 9 ? x[9] : "");
+        });
+        d7C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 10 ? x[10] : "");
+        });
+        d8C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 11 ? x[11] : "");
+        });
+        d9C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 12 ? x[12] : "");
+        });
+        d10C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 13 ? x[13] : "");
+        });
+        d11C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 14 ? x[14] : "");
+        });
+        p5C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 15 ? x[15] : "");
+        });
+        d12C.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 16 ? x[16] : "");
+        });
+        prubC.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 17 ? x[17] : "");
+        });
+        bitC.setCellValueFactory(param -> {
+            String[] x = param.getValue();
+            return new SimpleStringProperty(x != null && x.length > 18 ? x[18] : "");
+        });
+    
+        tableView2.getItems().addAll(Arrays.asList(inputTable2));
     }
     
+    
+    @FXML
+    void editCheck () {
+        
+        
+        tableView2.getItems().clear();
+        HamminTable2();
+    }
+    
+    ;
 }
