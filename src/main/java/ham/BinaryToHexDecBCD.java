@@ -28,7 +28,7 @@ public class BinaryToHexDecBCD {
         System.out.printf ( "\nBinario a Decimal (%s) = %d ", binary, decimal );
         
         String BCD = toBCD (decimal);
-        System.out.printf ( "\nBCD (%s)", BCD );
+        System.out.printf ( "\nBCD (%d) = %s", decimal, BCD );
         
     }
     
