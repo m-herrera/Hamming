@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("mainView.fxml"));
         primaryStage.setTitle("BINARY -> BCD & HAMMING");
-        primaryStage.setScene(new Scene(root, 1065, 850));
+        primaryStage.setScene(new Scene(root, 1100, 850));
         primaryStage.show();
     }
     

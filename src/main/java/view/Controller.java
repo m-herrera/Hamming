@@ -8,6 +8,7 @@ import ham.BinaryToHexDecBCD;
 import ham.Hamming;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -113,7 +114,8 @@ public class Controller {
         tableView1.getItems().clear();
         HammingTable1();
     
-        changeInput.setText(inputTextField.getText());
+        String ham = Hamming.getHamming17Bit(Hamming.getHammingTable(inputTextField.getText()));
+        changeInput.setText(ham);
         table2Btn.setDisable(false);
     }
     
@@ -369,11 +371,25 @@ public class Controller {
     
     @FXML
     void editCheck () {
-        
-        
-        tableView2.getItems().clear();
-        HamminTable2();
+        if (! changeInput.getText().contentEquals(Hamming.getHamming17Bit(Hamming.getHammingTable(inputTextField.getText()))) && changeInput.getText().matches("[0-1]{17}")) {
+            tableView2.getItems().clear();
+            HamminTable2();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("INFO");
+            alert.setHeaderText("Codigo Hamming");
+            alert.setContentText("Cambiar solo un bit y que sea binario");
+            alert.show();
+        }
     }
     
-    ;
+    @FXML
+    void showInfo () {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("INFO");
+        alert.setHeaderText("Conversion Binario -> BCD, HEXADECIMAL & DECIMAL");
+        alert.setContentText("Digite un numero binario de 12bits (digitos)");
+        alert.show();
+    }
+    
 }
