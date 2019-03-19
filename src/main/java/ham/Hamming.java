@@ -144,5 +144,6 @@ public class Hamming {
     public static void main(String[] args) {
         printTable(getHammingTable("100110100110"));
         printTable(getHammingError("11010010101001100"));
+        setParityType("odd");
     }
 }

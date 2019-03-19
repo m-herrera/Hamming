@@ -35,7 +35,7 @@
                 <Font size="14.0"/>
             </font>
         </Text>
-        <JFXButton fx:id="calcBtn" disable="true" layoutX="767.0" layoutY="631.0" onAction="#runBCD"
+        <JFXButton fx:id="calcBtn" disable="true" layoutX="871.0" layoutY="645.0" onAction="#runBCD"
                    style="-fx-background-color: #03960a;" text="Calcular" textFill="WHITE">
             <ripplerFill>
                 <LinearGradient endX="1.0" endY="1.0">
@@ -51,12 +51,12 @@
                 <Font size="18.0"/>
             </font>
         </Label>
-        <Label fx:id="DECLABEL" layoutX="256.0" layoutY="282.0" text="DEC">
+        <Label fx:id="DECLABEL" layoutX="236.0" layoutY="272.0" text="DEC">
             <font>
                 <Font size="18.0"/>
             </font>
         </Label>
-        <Label fx:id="HEXLABEL" layoutX="112.0" layoutY="283.0" text="HEX">
+        <Label fx:id="HEXLABEL" layoutX="236.0" layoutY="310.0" text="HEX">
             <font>
                 <Font size="18.0"/>
             </font>
@@ -155,7 +155,8 @@
                 <Font size="18.0"/>
             </font>
         </Label>
-        <JFXToggleButton fx:id="parToggle" layoutX="156.0" layoutY="321.0" selected="true" size="13.0" text="IMPAR">
+        <JFXToggleButton fx:id="parToggle" layoutX="156.0" layoutY="321.0" onAction="#checkToggle" selected="true"
+                         size="13.0" text="PAR">
             <unToggleLineColor>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
@@ -193,14 +194,14 @@
             <textFill>
                 <LinearGradient endX="1.0" endY="1.0">
                     <stops>
-                        <Stop color="BLACK"/>
-                        <Stop color="RED" offset="1.0"/>
+                        <Stop color="#00e7ff"/>
+                        <Stop color="#00e7ff" offset="0.007434944237918215"/>
+                        <Stop color="#ff0037" offset="1.0"/>
                     </stops>
                 </LinearGradient>
             </textFill>
         </JFXToggleButton>
-        <JFXTreeTableView layoutX="65.0" layoutY="416.0" prefHeight="229.0" prefWidth="291.0"/>
-        <JFXTextField fx:id="changeInput" alignment="CENTER" layoutX="578.0" layoutY="353.0" prefHeight="35.0"
+        <JFXTextField fx:id="changeInput" alignment="CENTER" layoutX="531.0" layoutY="341.0" prefHeight="35.0"
                       prefWidth="144.0" promptText="12bits">
             <font>
                 <Font size="18.0"/>
@@ -228,6 +229,19 @@
                 </LinearGradient>
             </fill>
         </MaterialDesignIconView>
+        <JFXButton fx:id="table2Btn" layoutX="713.0" layoutY="345.0" text="Edit"/>
+        <Label layoutX="78.0" layoutY="310.0" text="HEXADECIMAL:">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="78.0" layoutY="272.0" text="DECIMAL:">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="tableView1" layoutX="55.0" layoutY="405.0" prefHeight="208.0" prefWidth="636.0"/>
+        <TableView fx:id="tableView2" layoutX="719.0" layoutY="415.0" prefHeight="200.0" prefWidth="200.0"/>
     </children>
     <padding>
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
