@@ -96,9 +96,9 @@ public class Hamming {
         for(int i=1; i<=17; i++){
             if( (i&(i-1))==0){
                 if(original.get(i-1)==error.get(i-1) ){
-                    table[row][17]="T";
+                    table[row][17] = "Correcto";
                 }else{
-                    table[row][17]="F";
+                    table[row][17] = "Error";
                     errorPosition+=i;
                 }
                 table[row][18]=booleanToString(original.get(i-1));
